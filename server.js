@@ -22,7 +22,7 @@ const server = app.listen(port, () =>
 const io = socket(server);
 
 io.on('connection', function(socket) {
-  console.log('Socket connected with', socket);
+  console.log('Socket connected with', socket.id);
 
   socket.on('message', data => {
     io.sockets.emit('message', data);
