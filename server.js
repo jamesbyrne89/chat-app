@@ -15,4 +15,12 @@ if (process.env.NODE_ENV === 'production') {
 // Define port
 const port = process.env.PORT || 5000;
 
-app.listen(port, () => console.info(`Listening on port ${port}`));
+const server = app.listen(port, () =>
+  console.info(`Listening on port ${port}`)
+);
+
+const io = socket(server);
+
+io.on('connection', function(socket) {
+  console.log('Socket connected with', socket);
+});
