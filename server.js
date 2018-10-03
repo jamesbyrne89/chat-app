@@ -23,4 +23,8 @@ const io = socket(server);
 
 io.on('connection', function(socket) {
   console.log('Socket connected with', socket);
+
+  socket.on('message', data => {
+    io.sockets.emit('message', data);
+  });
 });

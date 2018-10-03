@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import io from 'socket.io-client';
 import './App.css';
 
+const socket = io('localhost:5000');
+
+socket.on('message', data => {
+  console.log(data);
+});
+
 class App extends Component {
+  emit = (username, message) => {
+    socket.emit('message', {
+      username,
+      message
+    });
+  };
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <button onClick={() => this.emit('James', 'Hello there')}>Emit</button>
       </div>
     );
   }
