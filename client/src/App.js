@@ -1,40 +1,53 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client';
 import './App.css';
+import ChatsList from './components/ChatsList/ChatsList';
+import Output from './components/Output/Output';
 import InputBox from './components/InputBox/InputBox';
 import styled from 'react-emotion';
 
 const socket = io('localhost:5000');
 
-socket.on('message', data => {
-  console.log(data);
-});
+const AppContainer = styled('main')`
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+`;
 
-const SendButton = styled('button')`
-  background: var(--red);
-  color: #fff;
-  line-height: 3;
-  padding: 0 1em;
-  border: solid 1px transparent;
-  cursor: pointer;
+const ChatWindow = styled('section')`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 `;
 
 class App extends Component {
-  emit = (username, message) => {
-    socket.emit('message', {
-      username,
-      message
+  constructor() {
+    super();
+    this.state = {
+      conversation_history: []
+    };
+  }
+
+  componentDidMount() {
+    const { conversation_history } = this.state;
+    socket.on('message', data => {
+      console.log(data);
+      console.log([...this.state.conversation_history, data]);
+      this.setState({
+        conversation_history: [...conversation_history, data]
+      });
     });
-  };
+  }
 
   render() {
     return (
-      <div className="App">
-        <InputBox />
-        <SendButton onClick={() => this.emit('James', 'Hello there')}>
-          Send
-        </SendButton>
-      </div>
+      <AppContainer>
+        <ChatsList />
+        <ChatWindow>
+          <Output conversation={this.state.conversation_history} />
+          <InputBox />
+        </ChatWindow>
+      </AppContainer>
     );
   }
 }
