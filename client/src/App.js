@@ -31,10 +31,8 @@ class App extends Component {
   componentDidMount() {
     const { conversation_history } = this.state;
     socket.on('message', data => {
-      console.log(data);
-      console.log([...this.state.conversation_history, data]);
       this.setState({
-        conversation_history: [...conversation_history, data]
+        conversation_history: [...this.state.conversation_history, data]
       });
     });
   }
