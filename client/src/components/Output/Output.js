@@ -8,21 +8,29 @@ const OutputWindow = styled('div')`
 `;
 
 const MessageBubble = styled('div')`
-  padding: 1.5em;
+  padding: 1em 1.5em;
   background: var(--redgradient);
   color: #fff;
   width: 80%;
   margin: 1rem auto;
   border-radius: 0.5em;
+  line-height: 1;
+  .time {
+    margin-bottom: 1em;
+  }
+  .message {
+    margin-left: 1em;
+  }
 `;
 
 const Output = props => {
   return (
     <OutputWindow>
-      {props.conversation.map((msg, i) => (
+      {props.conversation.map(({ username, message, time }, i) => (
         <MessageBubble key={i}>
-          <div className="message">{msg.username}:</div>
-          <div className="message">{msg.message}</div>
+          <div className="time">{time}</div>
+          <span className="username">{username}:</span>
+          <span className="message">{message}</span>
         </MessageBubble>
       ))}
     </OutputWindow>

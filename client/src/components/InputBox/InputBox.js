@@ -45,9 +45,17 @@ class InputBox extends Component {
     const { username, message } = this.state;
     socket.emit('message', {
       username,
-      message
+      message,
+      time: this.getSendTime()
     });
     this.setState({ message: '' });
+  };
+
+  getSendTime = () => {
+    const now = new Date();
+    const hours = now.getHours();
+    const mins = now.getMinutes();
+    return `${hours < 10 ? '0' + hours : hours}:${mins}`;
   };
 
   render() {
