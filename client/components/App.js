@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client';
-import './App.css';
-import ChatsList from './components/ChatsList/ChatsList';
-import Output from './components/Output/Output';
-import InputBox from './components/InputBox/InputBox';
+import '../styles/App.css';
+import ChatsList from './ChatsList/ChatsList';
+import Output from './Output/Output';
+import InputBox from './InputBox/InputBox';
 import styled from 'react-emotion';
 
 const socket = io('localhost:5000');

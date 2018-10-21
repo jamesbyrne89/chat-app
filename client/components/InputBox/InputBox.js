@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'react-emotion';
 import io from 'socket.io-client';
-import '../../App.css';
 
 const socket = io('localhost:5000');
 
