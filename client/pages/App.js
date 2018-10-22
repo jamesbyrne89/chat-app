@@ -1,10 +1,22 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client';
-import '../styles/App.css';
-import ChatsList from './ChatsList/ChatsList';
-import Output from './Output/Output';
-import InputBox from './InputBox/InputBox';
+import ChatsList from '../components/ChatsList/ChatsList';
+import Output from '../components/Output/Output';
+import InputBox from '../components/InputBox/InputBox';
 import styled from 'react-emotion';
+import { injectGlobal } from 'emotion';
+
+injectGlobal`
+  body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+`;
 
 const socket = io('localhost:5000');
 
