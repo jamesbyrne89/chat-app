@@ -6142,7 +6142,7 @@ module.exports = (__webpack_require__(/*! dll-reference dll_5d62d38be3592dca3a42
 /***/ (function(module, exports, __webpack_require__) {
 
 __NEXT_REGISTER_PAGE('/_error', function() {
-module.exports = __webpack_require__(/*! C:\Users\James.Bryne\Documents\Personal Projects\chat-app\client\node_modules\next\dist\pages\_error.js */"./node_modules/next/dist/pages/_error.js");
+module.exports = __webpack_require__(/*! E:\Users\James\Web Dev\Projects\Chat App\client\node_modules\next\dist\pages\_error.js */"./node_modules/next/dist/pages/_error.js");
 
 return { page: module.exports.default }});
 

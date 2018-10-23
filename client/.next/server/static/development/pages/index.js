@@ -106,7 +106,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_emotion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-emotion */ "react-emotion");
 /* harmony import */ var react_emotion__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_emotion__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "C:\\Users\\James.Bryne\\Documents\\Personal Projects\\chat-app\\client\\components\\ChatsList\\ChatsList.js";
+var _jsxFileName = "E:\\Users\\James\\Web Dev\\Projects\\Chat App\\client\\components\\ChatsList\\ChatsList.js";
 
 function _templateObject() {
   var data = _taggedTemplateLiteral(["\n  border: solid 1px #ccc;\n"]);
@@ -153,7 +153,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_emotion__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_emotion__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! socket.io-client */ "socket.io-client");
 /* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(socket_io_client__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "C:\\Users\\James.Bryne\\Documents\\Personal Projects\\chat-app\\client\\components\\InputBox\\InputBox.js";
+var _jsxFileName = "E:\\Users\\James\\Web Dev\\Projects\\Chat App\\client\\components\\InputBox\\InputBox.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -318,7 +318,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_emotion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-emotion */ "react-emotion");
 /* harmony import */ var react_emotion__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_emotion__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "C:\\Users\\James.Bryne\\Documents\\Personal Projects\\chat-app\\client\\components\\Output\\Output.js";
+var _jsxFileName = "E:\\Users\\James\\Web Dev\\Projects\\Chat App\\client\\components\\Output\\Output.js";
 
 function _templateObject2() {
   var data = _taggedTemplateLiteral(["\n  padding: 1em 1.5em;\n  background: var(--redgradient);\n  color: #fff;\n  width: 80%;\n  margin: 1rem auto;\n  border-radius: 0.5em;\n  line-height: 1;\n  .time {\n    margin-bottom: 1em;\n  }\n  .message {\n    margin-left: 1em;\n  }\n"]);
@@ -394,10 +394,10 @@ var Output = function Output(props) {
 
 /***/ }),
 
-/***/ "./pages/App.js":
-/*!**********************!*\
-  !*** ./pages/App.js ***!
-  \**********************/
+/***/ "./pages/index.js":
+/*!************************!*\
+  !*** ./pages/index.js ***!
+  \************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -414,7 +414,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_emotion__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_emotion__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var emotion__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! emotion */ "emotion");
 /* harmony import */ var emotion__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(emotion__WEBPACK_IMPORTED_MODULE_6__);
-var _jsxFileName = "C:\\Users\\James.Bryne\\Documents\\Personal Projects\\chat-app\\client\\pages\\App.js";
+var _jsxFileName = "E:\\Users\\James\\Web Dev\\Projects\\Chat App\\client\\pages\\index.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -561,13 +561,13 @@ function (_Component) {
 /***/ }),
 
 /***/ 3:
-/*!****************************!*\
-  !*** multi ./pages/App.js ***!
-  \****************************/
+/*!******************************!*\
+  !*** multi ./pages/index.js ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./pages/App.js */"./pages/App.js");
+module.exports = __webpack_require__(/*! ./pages/index.js */"./pages/index.js");
 
 
 /***/ }),
@@ -617,4 +617,4 @@ module.exports = require("socket.io-client");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=App.js.map
+//# sourceMappingURL=index.js.map
