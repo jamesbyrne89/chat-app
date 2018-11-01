@@ -5,8 +5,13 @@ const ChatsContainer = styled('aside')`
   border: solid 1px #ccc;
 `;
 
-const ChatsList = () => {
-  return <ChatsContainer>List of chats</ChatsContainer>;
+const ChatsList = props => {
+  return (
+    <ChatsContainer>
+      List of chats
+      <button onClick={() => props.onClick('/room2')}>New chat</button>
+    </ChatsContainer>
+  );
 };
 
 export default ChatsList;

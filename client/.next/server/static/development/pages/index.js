@@ -124,14 +124,23 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var ChatsContainer = react_emotion__WEBPACK_IMPORTED_MODULE_1___default()('aside')(_templateObject());
 
-var ChatsList = function ChatsList() {
+var ChatsList = function ChatsList(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ChatsContainer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 10
     },
     __self: this
-  }, "List of chats");
+  }, "List of chats", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: function onClick() {
+      return props.onClick('/room2');
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }, "New chat"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ChatsList);
@@ -434,13 +443,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _templateObject3() {
   var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n"]);
@@ -482,7 +493,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 Object(emotion__WEBPACK_IMPORTED_MODULE_6__["injectGlobal"])(_templateObject());
-var socket = socket_io_client__WEBPACK_IMPORTED_MODULE_1___default()('localhost:5000');
+var socket = socket_io_client__WEBPACK_IMPORTED_MODULE_1___default.a.connect('localhost:5000');
 var AppContainer = react_emotion__WEBPACK_IMPORTED_MODULE_5___default()('main')(_templateObject2());
 var ChatWindow = react_emotion__WEBPACK_IMPORTED_MODULE_5___default()('section')(_templateObject3());
 
@@ -497,8 +508,16 @@ function (_Component) {
     _classCallCheck(this, App);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(App).call(this));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "createNewChat", function (namespace) {
+      _this.setState({
+        allChats: _toConsumableArray(_this.state.allChats).concat([socket_io_client__WEBPACK_IMPORTED_MODULE_1___default.a.connect(namespace)])
+      });
+    });
+
     _this.state = {
-      conversation_history: []
+      conversation_history: [],
+      allChats: []
     };
     return _this;
   }
@@ -521,32 +540,33 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AppContainer, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 209
+          lineNumber: 216
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ChatsList_ChatsList__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        onClick: this.createNewChat,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 210
+          lineNumber: 217
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ChatWindow, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 211
+          lineNumber: 218
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Output_Output__WEBPACK_IMPORTED_MODULE_3__["default"], {
         conversation: this.state.conversation_history,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 212
+          lineNumber: 219
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_InputBox_InputBox__WEBPACK_IMPORTED_MODULE_4__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 213
+          lineNumber: 220
         },
         __self: this
       })));

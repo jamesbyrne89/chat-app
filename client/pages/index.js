@@ -173,7 +173,7 @@ button {
 }
 `;
 
-const socket = io('localhost:5000');
+const socket = io.connect('localhost:5000');
 
 const AppContainer = styled('main')`
   min-height: 100vh;
@@ -191,7 +191,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      conversation_history: []
+      conversation_history: [],
+      allChats: []
     };
   }
 
@@ -204,10 +205,16 @@ class App extends Component {
     });
   }
 
+  createNewChat = namespace => {
+    this.setState({
+      allChats: [...this.state.allChats, io.connect(namespace)]
+    });
+  };
+
   render() {
     return (
       <AppContainer>
-        <ChatsList />
+        <ChatsList onClick={this.createNewChat} />
         <ChatWindow>
           <Output conversation={this.state.conversation_history} />
           <InputBox />
