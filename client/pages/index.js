@@ -5,6 +5,7 @@ import Output from '../components/Output/Output';
 import InputBox from '../components/InputBox/InputBox';
 import styled from 'react-emotion';
 import { injectGlobal } from 'emotion';
+import generateHash from 'random-hash';
 
 injectGlobal`
 :root {
