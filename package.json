@@ -18,7 +18,7 @@
     "nodemon": "^1.18.4"
   },
   "dependencies": {
-    "emotion": "^9.2.12",
+    "emotion": "^10.0.14",
     "express": "^4.16.3",
     "next": "^7.0.2",
     "socket.io": "^2.1.1"
